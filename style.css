@@ -1,0 +1,770 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    position: sticky;
+    top: 0
+}
+
+.navbar-container { 
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    position:relative;
+    font-weight: 600;
+    font-size: 25px;
+    color: yellow;
+    font-family: 'Sen', sans-serif;
+    text-transform: uppercase;
+}
+
+.menu-container {
+    position: relative;
+    display: flex;
+
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-list-item {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 15px 22px;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: none;
+}
+
+.menu-list-item.active {
+    font-weight: bold;
+}
+
+.sidebar {
+    width: 50px;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    padding-top: 60px;
+}
+
+.container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+}
+
+.content-container {
+    margin-left: 50px;
+}
+
+.featured-content {
+    height: 50vh;
+    padding: 50px;
+}
+
+.featured-title {
+    width: 200px;
+}
+
+.featured-desc {
+    width: 500px;
+    color: lightgrey;
+    margin: 30px 0;
+}
+
+.featured-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.movie-list-container {
+    padding: 0 20px;
+}
+
+.movie-list-wrapper {
+    position: relative; 
+    overflow: hidden;
+}
+
+.movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+}
+
+.movie-list-item {
+    margin-right: 30px;
+    position: relative;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+    opacity: 1;
+}
+
+.movie-list-item-img {
+    transition: all 1s ease-in-out;
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.movie-list-item-title {
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+    background-color: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0; 
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-button {
+    padding: 10px;
+    background-color: #4dbf00;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.container.active {
+    background-color: white;
+}
+
+.movie-list-title.active {
+    color: black;
+}
+
+.navbar-container.active {
+    background-color: white;
+    color: black;
+}
+
+.left-menu-icon.active {
+    color: black;
+}
+
+@media only screen and (max-with:940) {
+    .menu-container {
+        display: none;
+    }
+}
+
+/*Movies.html styling*/
+
+.second {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background: #171717;
+}
+
+.second .romance {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.second .romance h1 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.second .romance .box {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;      
+}
+
+.second .romance .box .card {
+    width: 250px;
+    height: 370px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.second .romance .box .card .details {
+    width: 250px;
+    height: 370px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.second .romance .box .card:hover .details {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,0,0,0,7));
+}
+
+.second .romance .box .card .details .left {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    transform: translateX(-100px);
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.second .romance .box .card:hover .details .left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.second .romance .box .card .details .left p.name {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.second .romance .box .card .details .left .date_quality {
+    display: flex;
+    align-items: center;
+}
+
+
+.second .romance .box .card .details .left .date_quality p.quality {
+    width: 30px;
+    font-size: 13px;
+    background: #ffe100;
+    color: #282931;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.second .romance .box .card .details .left .date_quality p.quality p.date {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+.second .romance .box .card .details .left .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.second .romance .box .card .details .left .info .rate {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.second .romance .box .card .details .left .info .rate i {
+    font-size: 12px;
+    color: #ffd500;
+    margin-right: 5px;
+}
+
+
+.second .romance .box .card .details .left .info .rate p {
+    font-size: 12px;
+}
+
+
+.second .romance .box .card .details .left .info .time {
+    display: flex;
+    align-items: center;
+}
+
+
+.second .romance .box .card .details .left .info .time i {
+    font-size: 12px;
+    color-scheme: #ffd500;
+    margin-left: 5px;
+}
+
+.second .romance .box .card .details .left .info .time p {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.second .romance .box .card .details .right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    transform: translateX(100px);
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.second .romance .box .card:hover .details .right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.second .romance .box .card .details .right i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #ffe100;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #282931;
+    margin: 0 10px 8px 0;
+}
+
+.second .romance .box .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+img {
+    width: 150px;
+}
+
+/*---------------------*/ 
+
+
+
+.travel,
+.horror,
+.med,
+.korea,
+.school,
+.games,
+.apps {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background-color: #171717;
+}
+
+.travel .movies_box,
+.horror .movie_box,
+.med .movie_box,
+.korea .movie_box,
+.school .movie_box {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.travel .movies_box h1,
+.horror .movies_box h1,
+.med .movies_box h1,
+.korea .movies_box h1,
+.school .movies_box h1,
+.games .movies_box h1,
+.apps .movies_box h1 { 
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.travel .box,
+.horror .box,
+.med .box,
+.korea .box,
+.school .box,
+.games .box,
+.apps .box { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;      
+}
+
+.travel .box .card,
+.horror .box .card,
+.med .box .card,
+.korea .box .card,
+.school .box .card,
+.games .box .card,
+.apps .box .card {
+    width: 250px;
+    height: 370px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.travel .box .card .details,
+.horror .box .card .details,
+.med .box .card .details,
+.korea .box .card .details,
+.school .box .card .details,
+.games .box .card .details,
+.apps .box .card .details {
+    width: 250px;
+    height: 370px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.travel .box .card:hover .details,
+.horror .box .card:hover .details,
+.med .box .card:hover .details,
+.korea .box .card:hover .details,
+.school .box .card:hover .details,
+.games .box .card:hover .details,
+.apps .box .card:hover .details {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,0,0,0,7));
+}
+
+.travel .box .card .details .left,
+.horror .box .card .details .left,
+.med .box .card .details .left,
+.korea .box .card .details .left,
+.school .box .card .details .left,
+.games .box .card .details .left,
+.apps .box .card .details .left  {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    transform: translateX(-100px);
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.travel .box .card:hover .details .left,
+.horror .box .card:hover .details .left,
+.med .box .card:hover .details .left,
+.korea .box .card:hover .details .left,
+.school .box .card:hover .details .left,
+.games .box .card:hover .details .left,
+.apps .box .card:hover .details .left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.travel .box .card .details .left p.name,
+.horror .box .card:hover .details .left p.name,
+.med .box .card:hover .details .left p.name,
+.korea .box .card:hover .details .left p.name,
+.school .box .card:hover .details .left p.name,
+.games .box .card:hover .details .left p.name,
+.apps .box .card:hover .details .left p.name {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.travel .box .card .details .left .date_quality,
+.horror .box .card .details .left .date_quality,
+.med .box .card .details .left .date_quality,
+.korea .box .card .details .left .date_quality,
+.school .box .card .details .left .date_quality,
+.games .box .card .details .left .date_quality,
+.apps .box .card .details .left .date_quality {
+    display: flex;
+    align-items: center;
+}
+
+
+.travel .box .card .details .left .date_quality p.quality,
+.horror .box .card .details .left .date_quality p.quality,
+.med .box .card .details .left .date_quality p.quality,
+.korea .box .card .details .left .date_quality p.quality,
+.school .box .card .details .left .date_quality p.quality,
+.games .box .card .details .left .date_quality p.quality,
+.apps .box .card .details .left .date_quality p.quality {
+    width: 30px;
+    font-size: 13px;
+    background: #ffe100;
+    color: #282931;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.travel .box .card .details .left .date_quality p.quality p.date,
+.horror .box .card .details .left .date_quality p.quality p.date,
+.med .box .card .details .left .date_quality p.quality p.date,
+.korea .box .card .details .left .date_quality p.quality p.date,
+.school .box .card .details .left .date_quality p.quality p.date,
+.games .box .card .details .left .date_quality p.quality p.date,
+.apps .box .card .details .left .date_quality p.quality p.date {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+.travel .box .card .details .left p.category,
+.horror .box .card .details .left p.category,
+.med .box .card .details .left p.category,
+.korea .box .card .details .left p.category,
+.school .box .card .details .left p.category,
+.travel .box .card .details .left p.category,
+.games .box .card .details .left p.category,
+.apps .box .card .details .left p.category {
+    margin-left: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.travel .box .card .details .left .info,
+.horror .box .card .details .left .info,
+.med .box .card .details .left .info,
+.korea .box .card .details .left .info,
+.school .box .card .details .left .info,
+.travel .box .card .details .left .info,
+.games .box .card .details .left .info,
+.apps .box .card .details .left .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.travel .box .card .details .left .info .rate,
+.horror .box .card .details .left .info .rate,
+.med .box .card .details .left .info .rate,
+.korea .box .card .details .left .info .rate,
+.school .box .card .details .left .info .rate,
+.games .box .card .details .left .info .rate,
+.apps .box .card .details .left .info .rate {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.travel .box .card .details .left .info .rate i,
+.horror .box .card .details .left .info .rate i,
+.med .box .card .details .left .info .rate i,
+.korea .box .card .details .left .info .rate i,
+.school .box .card .details .left .info .rate i,
+.games .box .card .details .left .info .rate i,
+.apps .box .card .details .left .info .rate i {
+    font-size: 12px;
+    color: #ffd500;
+    margin-right: 5px;
+}
+
+
+.travel .box .card .details .left .info .rate p,
+.horror .box .card .details .left .info .rate p,
+.med .box .card .details .left .info .rate p,
+.korea .box .card .details .left .info .rate p,
+.school .box .card .details .left .info .rate p,
+.games .box .card .details .left .info .rate p,
+.apps .box .card .details .left .info .rate p {
+    font-size: 12px;
+}
+
+
+.travel .box .card .details .left .info .time,
+.med .box .card .details .left .info .time,
+.school .box .card .details .left .info .time,
+.korea .box .card .details .left .info .time,
+.horror .box .card .details .left .info .time {
+    display: flex;
+    align-items: center;
+}
+
+
+.travel .box .card .details .left .info .time i,
+.med .box .card .details .left .info .time i,
+.school .box .card .details .left .info .time i,
+.korea .box .card .details .left .info .time i,
+.horror .box .card .details .left .info .time i {
+    font-size: 12px;
+    color-scheme: #ffd500;
+    margin-left: 5px;
+}
+
+
+.travel .box .card .details .left .info .time p,
+.games .box .card .details .left .info .time p,
+.med .box .card .details .left .info .time p,
+.apps .box .card .details .left .info .time p,
+.school .box .card .details .left .info .time p,
+.korea .box .card .details .left .info .time p,
+.horror .box .card .details .left .info .time p {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.travel .box .card .details .right,
+.games .box .card .details .right,
+.med .box .card .details .right,
+.apps .box .card .details .right ,
+.school .box .card .details .right,
+.korea .box .card .details .right,
+.horror .box .card .details .right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    transform: translateX(100px);
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.travel .box .card:hover .details .right,
+.games .box .card:hover .details .right,
+.med .box .card:hover .details .right,
+.apps .box .card:hover .details .right,
+.school .box .card:hover .details .right,
+.korea .box .card:hover .details .right,
+.horror .box .card:hover .details .right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.travel .box .card .details .right i, 
+.games .box .card .details .right i,
+.med .box .card .details .right i,
+.apps .box .card .details .right i,
+.school .box .card .details .right i,
+.korea .box .card ,details .right i,
+.horror .box .card .details .right i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #ffe100;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #282931;
+    margin: 0 10px 8px 0;
+}
+
+.travel .box .card img,
+.games .box .card img,
+.med .box .card img,
+.apps .box .card img,
+.school .box .card img,
+.korea .box .card img,
+.horror .box .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+footer {
+    background-color: #dfc010;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-links a:hover {
+    color: #dab10ddd; /* Change to your preferred hover color */
+  }
+  
+  p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+  }
+  
+
+
+
+
+
+
